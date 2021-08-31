@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="keywords" content="Bootstrap, Landing page, Template, Business, Service">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="Grayrids">
+    <title>MODI AFRICA REAL ESTATE</title>
+    <!--====== Favicon Icon ======-->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/ico">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/LineIcons.css">
+    <link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="css/owl.theme.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/nivo-lightbox.css">
+    <link rel="stylesheet" href="css/main.css">    
+    <link rel="stylesheet" href="css/responsive.css">
+
+  </head>
+  
+  <body>
+
+    <!-- Header Section Start -->
+    <header id="home" class="hero-area">    
+      <div class="overlay">
+        <span></span>
+        <span></span>
+      </div>
+      <nav class="navbar navbar-expand-md bg-inverse fixed-top scrolling-navbar">
+        <div class="container">
+          <a href="index.html" class="navbar-brand"><img src="img/Logos/logo.png" alt="" style="width: 80px; height: 80px;"></a>       
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="lni-menu"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto w-100 justify-content-end">
+              <li class="nav-item">
+                <a class="nav-link page-scroll" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link page-scroll" href="index.html">About</a>
+              </li>                            
+              <li class="nav-item">
+                <a class="nav-link" href="listings.html">Listings</a>
+              </li>       
+              <!-- <li class="nav-item">
+                <a class="nav-link page-scroll" href="#pricing">Pricing</a>
+              </li>     
+              <li class="nav-item">
+                <a class="nav-link page-scroll" href="#team">Team</a>
+              </li> 
+              <li class="nav-item">
+                <a class="nav-link page-scroll" href="#blog">Blog</a>
+              </li>   -->
+              <li class="nav-item">
+                <a class="nav-link page-scroll" href="index.html">Contact</a>
+              </li> 
+              <li class="nav-item">
+                <a class="nav-link page-scroll" href="login.html"></a>
+              </li> 
+              <li class="nav-item">
+                <a href="login.html" class="btn btn-outline-light">Log In</a> 
+              </li>
+              <li class="nav-item">
+                <a class="btn btn-singin" href="sign-up.html">Sign Up</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>  
+      <div class="container">      
+        <div class="row space-100">
+          <div class="col-lg-6 col-md-12 col-xs-12">
+            <div class="contents">
+              <h2 class="head-title">MODI<br>Listings</h2>
+              
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-12 col-xs-12 p-0">
+            <div class="intro-img">
+              <img src="img/hero0.png" alt="" style="margin-top: -40px; ">
+            </div>            
+          </div>
+        </div> 
+      </div>             
+    </header>
+    <!-- Header Section End --> 
+
+        <!-- Filter section  -->
+        <section class="filter">
+          <div class="filter-row">
+            <div class="filter-column">
+              <div class="filter-card">
+                  <div class="card-body">
+
+                    <div id="myBtnContainer">
+                      <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+                      <button class="btn" onclick="filterSelection('houses')"> Houses</button>
+                      <button class="btn" onclick="filterSelection('apartments')"> Apartments</button>
+                      <button class="btn" onclick="filterSelection('offices')"> Office Spaces</button>
+                      <button class="btn" onclick="filterSelection('warehouses')"> Warehouses</button>
+                    </div>
+
+                    <script>
+                      filterSelection("all")
+                      function filterSelection(c) {
+                        var x, i;
+                        x = document.getElementsByClassName("filterDiv");
+                        if (c == "all") c = "";
+                        for (i = 0; i < x.length; i++) {
+                          w3RemoveClass(x[i], "show");
+                          if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+                        }
+                      }
+                      
+                      function w3AddClass(element, name) {
+                        var i, arr1, arr2;
+                        arr1 = element.className.split(" ");
+                        arr2 = name.split(" ");
+                        for (i = 0; i < arr2.length; i++) {
+                          if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+                        }
+                      }
+                      
+                      function w3RemoveClass(element, name) {
+                        var i, arr1, arr2;
+                        arr1 = element.className.split(" ");
+                        arr2 = name.split(" ");
+                        for (i = 0; i < arr2.length; i++) {
+                          while (arr1.indexOf(arr2[i]) > -1) {
+                            arr1.splice(arr1.indexOf(arr2[i]), 1);     
+                          }
+                        }
+                        element.className = arr1.join(" ");
+                      }
+                      
+                      // Add active class to the current button (highlight it)
+                      var btnContainer = document.getElementById("myBtnContainer");
+                      var btns = btnContainer.getElementsByClassName("btn");
+                      for (var i = 0; i < btns.length; i++) {
+                        btns[i].addEventListener("click", function(){
+                          var current = document.getElementsByClassName("active");
+                          current[0].className = current[0].className.replace(" active", "");
+                          this.className += " active";
+                        });
+                      }
+                      </script>
+
+                  </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        <!-- End Filter section  -->
+
+    <!-- Listings section  -->
+    <section class="listings">
+      <div class="listings-row ">
+        <div class="listings-column ">
+          <div class="listings-card filterDiv houses">
+            <img src="/img/property/prop 1.jpg" class="card-img-top" alt="..." >
+              <div class="card-body">
+                <h6 class="card-title">Property Name</h6>
+                <p class="card-text">Price</p>
+                <p class="card-text">Number iof shares</p>
+                <p class="card-text">Location</p>
+                <p class="card-text">Details</p>
+                <br>
+                <a href="#" class="btn btn-success" data-toggle="modal" data-target="#myModal">Purchase Shares</a>
+
+                  <!-- Modal -->
+                <div class="modal fade" id="myModal" role="dialog" style="margin-top: 100px;">
+                  <div class="modal-dialog  modal-lg">
+                  
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <!-- <h4 class="modal-title">Modal Header</h4> -->
+                      </div>
+
+                      <div class="modal-body">
+                        <div class="modal-row">
+                          <div class="modal-column">
+                            <div class="modal-card">
+                              <img src="/img/property/prop 1.jpg" class="modal-img" alt="..." >
+                            </div>
+                          </div>
+                        
+                          <div class="modal-column">
+                            <div class="modal-card">
+                              <img src="/img/property/prop 1.jpg" class="modal-img" alt="..." >
+                            </div>
+                          </div>
+                          
+                          <div class="modal-column">
+                            <div class="modal-card">
+                              <img src="/img/property/prop 1.jpg" class="modal-img" alt="..." >
+                            </div>
+                          </div>
+                          
+                          <div class="modal-column">
+                            <div class="modal-card">
+                              <img src="/img/property/prop 1.jpg" class="modal-img" alt="..." >
+                            </div>
+                          </div>
+                        </div>
+                        <br><br><br>
+                        <div class="modal-row">
+                          <div class="modal2-column">
+                            <h6 class="">Property Name</h6>
+                              <p class="">Price</p>
+                              <p class="">Number iof shares</p>
+                              <p class="">Location</p>
+                              <p class="">Details</p>
+                          </div>
+
+                          <div class="modal2-column">
+                            <a href="#" class="btn btn-success" data-toggle="modal" data-target="#myModal">Purchase Shares</a>
+                          </div>
+                          
+                        </div>
+                      </div>
+
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+
+        
+      
+        <div class="listings-column">
+          <div class="listings-card filterDiv apartments">
+            <img src="/img/property/prop 4.jpg" class="card-img-top" alt="..." >
+              <div class="card-body">
+                <h6 class="card-title">Property Name</h6>
+                <p class="card-text">Price</p>
+                <p class="card-text">Number iof shares</p>
+                <p class="card-text">Location</p>
+                <p class="card-text">Details</p>
+                <br>
+                <a href="#" class="btn btn-success">Purchase Shares</a>
+              </div>
+          </div>
+        </div>
+        
+        <div class="listings-column">
+          <div class="listings-card filterDiv offices">
+            <img src="/img/property/prop 2.jpg" class="card-img-top" alt="..." >
+            <div class="card-body">
+              <h6 class="card-title">Property Name</h6>
+              <p class="card-text">Price</p>
+              <p class="card-text">Number iof shares</p>
+              <p class="card-text">Location</p>
+              <p class="card-text">Details</p>
+              <br>
+              <a href="#" class="btn btn-success">Purchase Shares</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="listings-column">
+          <div class="listings-card filterDiv warehouses">
+            <img src="/img/property/prop 5.jpg" class="card-img-top" alt="..." >
+              <div class="card-body">
+                <h6 class="card-title">Property Name</h6>
+                <p class="card-text">Price</p>
+                <p class="card-text">Number iof shares</p>
+                <p class="card-text">Location</p>
+                <p class="card-text">Details</p>
+                <br>
+                <a href="#" class="btn btn-success">Purchase Shares</a>
+              </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- End Listings section  -->
+
+    <!-- Footer Section Start -->
+    <footer>
+      <!-- Footer Area Start -->
+      <section id="footer-Content">
+        <div class="container">
+          <!-- Start Row -->
+          <div class="row">
+
+          <!-- Start Col -->
+            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 col-mb-12">
+              
+              <div class="footer-logo">
+               <img src="img/logos/logo.png" alt="" style="width: 80%; margin-top: -100px;">
+              </div>
+            </div>
+             <!-- End Col -->
+              <!-- Start Col -->
+            <div class="col-lg-2 col-md-6 col-sm-6 col-xs-6 col-mb-12">
+              <div class="widget">
+                <h3 class="block-title">Company</h3>
+                <ul class="menu">
+                  <li><a href="#">  - About Us</a></li>
+                  <li><a href="#">- Career</a></li>
+                  <li><a href="#">- Blog</a></li>
+                  <li><a href="#">- Press</a></li>
+                </ul>
+              </div>
+            </div>
+             <!-- End Col -->
+              <!-- Start Col -->
+            <div class="col-lg-2 col-md-6 col-sm-6 col-xs-6 col-mb-12">
+              <div class="widget">
+                <h3 class="block-title">Product</h3>
+                <ul class="menu">
+                  <li><a href="#">  - Customer Service</a></li>
+                  <li><a href="#">- Enterprise</a></li>
+                  <li><a href="#">- Price</a></li>
+                  <li><a href="#">- Scurity</a></li>
+                  <li><a href="#">- Why SLICK?</a></li>
+                </ul>
+              </div>
+            </div>
+             <!-- End Col -->
+              <!-- Start Col -->
+            <div class="col-lg-2 col-md-6 col-sm-6 col-xs-6 col-mb-12">
+              <div class="widget">
+                <h3 class="block-title">Download App</h3>
+                <ul class="menu">
+                  <li><a href="#">  - Android App</a></li>
+                  <li><a href="#">- IOS App</a></li>
+                  <li><a href="#">- Windows App</a></li>
+                  <li><a href="#">- Play Store</a></li>
+                  <li><a href="#">- IOS Store</a></li>
+                </ul>
+              </div>
+            </div>
+             <!-- End Col -->
+              <!-- Start Col -->
+            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 col-mb-12">
+              <div class="widget">
+                <h3 class="block-title">Subscribe Now</h3>
+                <p>Appropriately implement calysts for change visa wireless catalysts for change. </p>
+                <div class="subscribe-area">
+                  <input type="email" class="form-control" placeholder="Enter Email">
+                  <span><i class="lni-chevron-right"></i></span>
+                </div>
+              </div>
+            </div>
+            <!-- End Col -->
+          </div>
+          <!-- End Row -->
+        </div>
+        <!-- Copyright Start  -->
+
+        <div class="copyright">
+          <div class="container">
+            <!-- Star Row -->
+            <div class="row">
+              <div class="col-md-12">
+                <div class="site-info text-center">
+                  <p>Crafted by <a href="http://kevinkinyua.dev" rel="nofollow">Kevin Kinyua</a></p>
+                </div>              
+                
+              </div>
+              <!-- End Col -->
+            </div>
+            <!-- End Row -->
+          </div>
+        </div>
+      <!-- Copyright End -->
+      </section>
+      <!-- Footer area End -->
+      
+    </footer>
+    <!-- Footer Section End --> 
+
+
+    <!-- Go To Top Link -->
+    <a href="#" class="back-to-top">
+      <i class="lni-chevron-up"></i>
+    </a> 
+
+    <!-- Preloader -->
+    <div id="preloader">
+      <div class="loader" id="loader-1"></div>
+    </div>
+    <!-- End Preloader -->
+
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="js/jquery-min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.js"></script>      
+    <script src="js/jquery.nav.js"></script>    
+    <script src="js/scrolling-nav.js"></script>    
+    <script src="js/jquery.easing.min.js"></script>     
+    <script src="js/nivo-lightbox.js"></script>     
+    <script src="js/jquery.magnific-popup.min.js"></script>      
+    <script src="js/main.js"></script>
+    
+  </body>
+</html>
